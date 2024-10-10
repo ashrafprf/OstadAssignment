@@ -1,0 +1,394 @@
+{
+	"info": {
+		"_postman_id": "b5e8d331-05da-47bb-82cd-27f5f55c65f2",
+		"name": "Task manager Rest API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9518923",
+		"_collection_link": "https://planetary-escape-12290.postman.co/workspace/MERN6~0529260f-ea04-4e47-a7c6-da56d12285a4/collection/9518923-b5e8d331-05da-47bb-82cd-27f5f55c65f2?action=share&source=collection_link&creator=9518923"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Registration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"engr.rabbil@yahoo.com\",\n    \"firstName\":\"Rabbil\",\n    \"lastName\":\"Hasan\",\n    \"mobile\":\"01786388919\",\n    \"password\":\"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/Registration",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"Registration"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"engr.rabbil@yahoo.com\",\n    \"password\":\"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/Login",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"Login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ProfileDetails",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/ProfileDetails",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"ProfileDetails"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ProfileUpdate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"engr.rabbil@yahoo.com\",\n    \"firstName\":\"Rabbil\",\n    \"lastName\":\"Hasan Rupom\",\n    \"mobile\":\"01786388919\",\n    \"password\":\"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/ProfileUpdate",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"ProfileUpdate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EmailVerify",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/EmailVerify/engr.rabbil@yahoo.com",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"EmailVerify",
+								"engr.rabbil@yahoo.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CodeVerify",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"engr.rabbil@yahoo.com\",\n    \"otp\":\"881871\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/CodeVerify",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"CodeVerify"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ResetPassword",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"engr.rabbil@yahoo.com\",\n    \"otp\":\"0\",\n    \"password\":\"abc123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/ResetPassword",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"ResetPassword"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Task",
+			"item": [
+				{
+					"name": "CreateTask",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\":\"ABC\",\n    \"description\":\"ABC\",\n    \"status\":\"new\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/CreateTask/",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"CreateTask",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateTaskStatus",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/UpdateTaskStatus/66dc90993515144f041a5f04/progress",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"UpdateTaskStatus",
+								"66dc90993515144f041a5f04",
+								"progress"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TaskListByStatus",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/TaskListByStatus/new",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"TaskListByStatus",
+								"new"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteTask",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/DeleteTask/66dc92a6deb9838e7a6d77e4",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"DeleteTask",
+								"66dc92a6deb9838e7a6d77e4"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CountTask",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/CountTask",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"CountTask"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "http://localhost:5050/api",
+			"type": "string"
+		},
+		{
+			"key": "TOKEN",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVuZ3IucmFiYmlsQHlhaG9vLmNvbSIsInVzZXJfaWQiOiI2NmRjODFlMzE3M2U4YzM1NzJlZWQ2MTAiLCJpYXQiOjE3MjU3MjgyOTIsImV4cCI6MTcyODMyMDI5Mn0.lWKjTE1AV5cnvge9F-59Xki0AMoWsdZLKZs_N_XPPBo",
+			"type": "string"
+		}
+	]
+}
